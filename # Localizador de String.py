@@ -1,8 +1,8 @@
-# Algoritmo de Localizador de String
-#Desenvolvido por Rafael Almeida Bittencourt e Gustavo Amaral Matias Costa
+# Algorithm for locate a string (of a's and b's) in a enumerated set: (Epsilon, a, b, aa, ab, ba, bb, aaa, aab, aba, abb, baa, bab, bba,bbb,aaaa,...)
+# Created por Rafael Almeida Bittencourt e Gustavo Amaral Matias Costa
 import math
 from pythonds.basic.stack import Stack
-def divideBy2(decNumber):  #função para converter um número de notação decimal para binária
+def divideBy2(decNumber):  #This function is for convert a number in decimal to binary form
     remstack = Stack()
     if decNumber == 0:
         return str(decNumber)
@@ -17,11 +17,11 @@ def divideBy2(decNumber):  #função para converter um número de notação deci
             binString = binString + str(remstack.pop())
 
         return binString
-i=int(input('Digite qual o número da string que deseja buscar: '))
+i=int(input('type the number of string that you want to know: '))
 if i == 0:
-    print(f'A cadeia escolhida é a vazia (epsilon)')
+    print(f'the chosen string is a empty string (epsilon)')
 else:
-    numcar = int((math.log(i+1,10))/(math.log(2,10))) # Determina o número de caracteres
+    numcar = int((math.log(i+1,10))/(math.log(2,10))) # Define the number of characters
     marco = 2**numcar-1 #Determina o marco inferior, ou seja, o número ao qual o novo número de caracter começa
     decnum = i - marco #Calcula a diferença entre o número escolhido e o marco inferior, em notação decimal
     binnum = divideBy2(decnum) # Função que converte o resultado da diferença acima em notação binária.
